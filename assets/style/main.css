@@ -4,4 +4,12 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+/*
+0px        576px   --> phone
+576px      768px   --> tab
+768px      992px   --> desktop
+992px      1200px  --> lgdesktop
+1200px     "...px" --> normal-style
+*/
 /*# sourceMappingURL=main.css.map */
