@@ -1,0 +1,46 @@
+.third-section {
+    padding: 88px;
+    background-color: #cecece;
+
+    .line {
+        margin: 15px auto;
+        @include heigthvswidth ($heigth: 3px, $width: 80px);
+        background-color: #AB0433;;
+
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 42px;
+        @include font($fontweigth: 700, $fontsize: 40px, $lineheigth: 130%, $color: #505050, $opacity: none, $textdecoration: none);  
+    }
+
+    .third-section-blog {
+        @include displaycenter ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 30px); 
+
+        .third-section-blog-item {
+            @include heigthvswidth ($heigth: 417px, $width: 400px);
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 24px 24px;
+
+            h5 {
+                margin: 28px 0 6px 0;
+                @include displaycenter ($displayflex: flex, $alignitem: center, $justifycontent: space-between, $flexdirection: none, $gap: 30px); 
+                @include font($fontweigth: 600, $fontsize: 18px, $lineheigth: 130%, $color: #252525, $opacity: none, $textdecoration: none);
+            }
+
+            p {
+                @include font($fontweigth: 500, $fontsize: 16px, $lineheigth: 130%, $color: #767676, $opacity: none, $textdecoration: none);  
+                margin-bottom: 10px;  
+            }
+
+            >span {
+                border: 1px solid #000;
+                padding: 5px;
+                border-radius: 30px;
+                @include font($fontweigth: 700, $fontsize: 12px, $lineheigth: 150%, $color: #505050, $opacity: none, $textdecoration: none);    
+            }
+        }
+    }    
+}
