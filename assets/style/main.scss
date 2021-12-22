@@ -4,13 +4,8 @@
     box-sizing: border-box;
 }
 
- @import "../section/first-section";
- @import "../section/second-section";
- @import "../section/third-section";
- @import "../section/fourth-section";
 
-
- @mixin heigthvswidth ($heigth, $width) {
+@mixin heigthvswidth ($heigth, $width) {
     height: $heigth;
     width: $width;
 }
@@ -24,13 +19,21 @@
     text-decoration: $textdecoration;
 }
 
-@mixin display ($displayflex, $alignitem, $justifycontent, $flexdirection, $gap) {
+@mixin displaycenter ($displayflex, $alignitem, $justifycontent, $flexdirection, $gap) {
     display: $displayflex;
     align-items: $alignitem;
     justify-content: $justifycontent;
     flex-direction: $flexdirection;
     gap: $gap;
 }
+
+ @import "../section/first-section";
+ @import "../section/second-section";
+ @import "../section/third-section";
+ @import "../section/fourth-section";
+
+
+
 
 /*
 0px        576px   --> phone
