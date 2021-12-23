@@ -19,7 +19,7 @@
     text-decoration: $textdecoration;
 }
 
-@mixin displaycenter ($displayflex, $alignitem, $justifycontent, $flexdirection, $gap) {
+@mixin display ($displayflex, $alignitem, $justifycontent, $flexdirection, $gap) {
     display: $displayflex;
     align-items: $alignitem;
     justify-content: $justifycontent;
@@ -30,7 +30,6 @@
  @import "../section/first-section";
  @import "../section/second-section";
  @import "../section/third-section";
- @import "../section/fourth-section";
 
 
 

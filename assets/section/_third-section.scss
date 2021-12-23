@@ -1,46 +1,57 @@
 .third-section {
     padding: 88px;
-    background-color: #cecece;
+    background-color: #fff;
 
     .line {
-        margin: 15px auto;
+        margin: 10px auto;
         @include heigthvswidth ($heigth: 3px, $width: 80px);
-        background-color: #AB0433;;
-
+        background-color: #AB0433; 
     }
 
     h2 {
         text-align: center;
-        margin-bottom: 42px;
-        @include font($fontweigth: 700, $fontsize: 40px, $lineheigth: 130%, $color: #505050, $opacity: none, $textdecoration: none);  
+        margin-bottom: 48px;
+        @include font($fontweigth: 700, $fontsize: 40px, $lineheigth: 120%, $color: #505050, $opacity: none, $textdecoration: none);  
     }
 
-    .third-section-blog {
-        @include displaycenter ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 30px); 
+    .third-section-top,
+    .third-section-bottom {
+        @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 32px);
 
-        .third-section-blog-item {
-            @include heigthvswidth ($heigth: 417px, $width: 400px);
-            background-color: #fff;
+        .third-section-top-box,
+        .third-section-bottom-box:nth-child(odd) {
+            background-color: #252525;
             border-radius: 10px;
-            padding: 24px 24px;
+            margin-bottom: 48px;
 
             h5 {
-                margin: 28px 0 6px 0;
-                @include displaycenter ($displayflex: flex, $alignitem: center, $justifycontent: space-between, $flexdirection: none, $gap: 30px); 
-                @include font($fontweigth: 600, $fontsize: 18px, $lineheigth: 130%, $color: #252525, $opacity: none, $textdecoration: none);
+                margin: 32px 32px 4px 32px;
+                @include font($fontweigth: 700, $fontsize: 24px, $lineheigth: 130%, $color: #fff, $opacity: none, $textdecoration: none);  
             }
 
             p {
-                @include font($fontweigth: 500, $fontsize: 16px, $lineheigth: 130%, $color: #767676, $opacity: none, $textdecoration: none);  
-                margin-bottom: 10px;  
-            }
-
-            >span {
-                border: 1px solid #000;
-                padding: 5px;
-                border-radius: 30px;
-                @include font($fontweigth: 700, $fontsize: 12px, $lineheigth: 150%, $color: #505050, $opacity: none, $textdecoration: none);    
+                margin: 0 32px 32px 32px;
+                @include font($fontweigth: 600, $fontsize: 18px, $lineheigth: 130%, $color: #c4c4c4, $opacity: none, $textdecoration: none);  
+ 
             }
         }
-    }    
-}
+
+        .third-section-top-box,
+        .third-section-bottom-box:nth-child(even) {
+            background: #EAEAEA;
+            border-radius: 10px;
+            margin-bottom: 48px;
+
+            h5 {
+                margin: 32px 32px 4px 32px;
+                @include font($fontweigth: 700, $fontsize: 24px, $lineheigth: 130%, $color: #202020, $opacity: none, $textdecoration: none);  
+            }
+
+            p {
+                margin: 0 32px 32px 32px;
+                @include font($fontweigth: 600, $fontsize: 18px, $lineheigth: 130%, $color: #767676, $opacity: none, $textdecoration: none);  
+ 
+            }
+        }
+    }
+}   
