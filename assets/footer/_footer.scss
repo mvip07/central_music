@@ -1,0 +1,75 @@
+footer {
+    overflow: hidden;
+    padding: 69px 52px 52px 100px;
+    @include heigthvswidth ($heigth: 256px, $width: 100%);
+    background: #505050;
+
+    @media (max-width: 576px) {
+        padding: 29px 14px 14px 33px;
+    }
+
+    .footer-text {
+        @include display ($displayflex: flex, $alignitem: center, $justifycontent: none, $flexdirection: none, $gap: 48px);
+        @media (max-width: 768px) {
+            @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 48px);
+        }
+
+        .footer-text-blog {
+            @include font($fontweigth: 700, $fontsize: 14px, $lineheigth: 130%, $color: #fff, $opacity: none, $textdecoration: none);
+
+            .line {
+                @include heigthvswidth ($heigth: 3px, $width: 58px);
+                background-color: #fff;
+                margin-bottom: 9px;
+            }
+
+            h5 {
+                margin-bottom: 6px;
+            }
+
+            p {
+                margin: 4.5px 0;
+            }
+        }
+    }
+
+    .footer-icon {
+        float: right;
+        position: relative;
+        top: -100px;
+        left: 0;
+
+        > img {
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .footer-icon-messenger {
+            margin-top: 35px;
+            position: relative;
+            top: 0;
+            left: calc(100% - 100px);
+
+            @media (max-width: 768px) {
+                left: -100%;
+                @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: row, $gap: 0);
+                margin: 120px auto;
+            }
+
+            img {
+                margin: 0 6px;
+                @media (max-width: 768px) {
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    padding: 8px 0 8px 64px;
+    @include heigthvswidth ($heigth: 34px, $width: 100%);
+    background: #252525;
+    color: #fff;
+
+}

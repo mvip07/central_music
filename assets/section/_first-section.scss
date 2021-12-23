@@ -70,7 +70,7 @@
                     max-width: 270px;
                     min-width: 270px;
                     height: 100vh;
-                    background: #003c4d;
+                    background: #fff;
                     top: 0px;
                     left: -100%;
                     text-align: center;
@@ -85,6 +85,7 @@
                 }
                 .navbar ul li a {
                     font-size: 20px;
+                    color: #505050;
                 }
                 #check:checked ~ ul {
                     left: 0;
