@@ -18,8 +18,6 @@
     .third-section-bottom {
         @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 32px);
 
-       
-
         .third-section-top-box,
         .third-section-bottom-box:nth-child(odd) {
             background-color: #252525;
@@ -63,8 +61,11 @@
         }
 
         img {
-            @include heigthvswidth ($heigth: auto, $width: 400px);
+            @include heigthvswidth ($heigth: auto, $width: auto);
 
+            @media (max-width: 650px) {
+                @include heigthvswidth ($heigth: auto, $width: 400px);
+            }
             @media (max-width: 440px) {
                 @include heigthvswidth ($heigth: auto, $width: 300px);
             }

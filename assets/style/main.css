@@ -691,7 +691,14 @@
 
 .third-section .third-section-top img {
   height: auto;
-  width: 400px;
+  width: auto;
+}
+
+@media (max-width: 650px) {
+  .third-section .third-section-top img {
+    height: auto;
+    width: 400px;
+  }
 }
 
 @media (max-width: 440px) {
