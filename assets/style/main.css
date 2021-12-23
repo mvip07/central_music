@@ -736,12 +736,12 @@
   }
 }
 
-.third-section .third-section-bottom .third-section-bottom-box {
+.third-section .third-section-bottom .third-section-bottom-box:last-child {
   display: none;
 }
 
 @media (max-width: 1300px) {
-  .third-section .third-section-bottom .third-section-bottom-box {
+  .third-section .third-section-bottom .third-section-bottom-box:last-child {
     display: block;
   }
 }
