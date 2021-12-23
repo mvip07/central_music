@@ -1,4 +1,5 @@
 .second-section {
+    margin-top: 100px;
     padding: 88px;
     background-color: #cecece;
 
@@ -13,16 +14,47 @@
         text-align: center;
         margin-bottom: 42px;
         @include font($fontweigth: 700, $fontsize: 40px, $lineheigth: 130%, $color: #505050, $opacity: none, $textdecoration: none);  
+
+        @media (max-width: 440px) {
+            @include font($fontweigth: 700, $fontsize: 25px, $lineheigth: 130%, $color: #505050, $opacity: none, $textdecoration: none);  
+        }
     }
 
     .third-section-blog {
         @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 30px); 
+
+        @media (max-width: 1200px) {
+            @include grid($display: grid, $split: 2, $num: 400px, $row: 417px, $grid-gap: 30px);
+        }
+
+        @media (max-width: 900px) {
+            @include grid($display: grid, $split: 1, $num: 400px, $row: 417px, $grid-gap: 30px);
+        }
+
+        .third-section-blog-item:last-child {
+            display: none;
+
+            @media (max-width: 1200px) {
+                display: block;
+            }
+        }
 
         .third-section-blog-item {
             @include heigthvswidth ($heigth: 417px, $width: 400px);
             background-color: #fff;
             border-radius: 10px;
             padding: 24px 24px;
+
+            @media (max-width: 440px) {
+                margin: auto;
+                @include heigthvswidth ($heigth: 417px, $width: 300px);
+            } 
+            
+            img {
+                @media (max-width: 440px) {
+                    @include heigthvswidth ($heigth: 217px, $width: 250px);
+                }
+            }
 
             h5 {
                 margin: 28px 0 6px 0;

@@ -18,6 +18,8 @@
     .third-section-bottom {
         @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 32px);
 
+       
+
         .third-section-top-box,
         .third-section-bottom-box:nth-child(odd) {
             background-color: #252525;
@@ -54,4 +56,48 @@
             }
         }
     }
+
+    .third-section-top {
+        @media (max-width: 1300px) {
+            @include grid ($display: grid, $split: 1, $num: auto, $row: auto, $grid-gap: 30px);
+        }
+
+        img {
+            @include heigthvswidth ($heigth: auto, $width: 400px);
+
+            @media (max-width: 440px) {
+                @include heigthvswidth ($heigth: auto, $width: 300px);
+            }
+        }
+    }
+    .third-section-bottom {
+        @media (max-width: 1300px) {
+            @include grid ($display: grid, $split: 2, $num: auto, $row: auto, $grid-gap: 30px);
+        }
+
+        @media (max-width: 880px) {
+            @include grid ($display: grid, $split: 1, $num: auto, $row: auto, $grid-gap: 30px);
+        }
+
+        img {
+            @include heigthvswidth ($heigth: auto, $width: 400px);
+
+            @media (max-width: 440px) {
+                @include heigthvswidth ($heigth: auto, $width: 300px);
+            }
+        }
+
+        .third-section-bottom-box {
+            display: none;
+
+            @media (max-width: 1300px) {
+                display: block;
+            }
+        }
+    }
 }   
+
+
+
+
+

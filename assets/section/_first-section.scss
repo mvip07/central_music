@@ -10,16 +10,91 @@
         background-size: cover;
         padding: 65px 87px;
 
+        @media (max-width: 576px) {
+            padding: 40px 30px;
+        }
+
         .header-top {
-            @include display ($displayflex: flex, $alignitem: center, $justifycontent: space-between, $flexdirection: none, $gap: 0);
+            @media (min-width: 1200px) {
+                @include display ($displayflex: flex, $alignitem: center, $justifycontent: space-between, $flexdirection: none, $gap: 0);
+            }
             margin-bottom: 187px;
 
-            div {
-                @include display ($displayflex: flex, $alignitem: center, $justifycontent: none, $flexdirection: none, $gap: 39px);
+            .navbar img {
+                margin-top: 20px;
 
-                nav, a  {
-                    @include display ($displayflex: flex, $alignitem: center, $justifycontent: none, $flexdirection: none, $gap: 56px);
-                    @include font($fontweigth: 600, $fontsize: 18px, $lineheigth: 120%, $color: #fff, $opacity: none, $textdecoration: none); 
+                @media (max-width: 450px) {
+                    display: none;
+                }
+            }
+            .navbar ul {
+                float: right;
+                margin-right: 10px;
+
+                li {
+                    display: inline-block;
+                    line-height: 80px;
+                    margin: 0 20px;
+
+                    a {
+                        color: white;
+                        font-size: 16px;
+                        line-height: 160%;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .checkbtn {
+                font-size: 30px;
+                color: white;
+                float: right;
+                line-height: 80px;
+                margin-right: 20px;
+                cursor: pointer;
+                display: none;
+    
+            }
+            #check {
+                display: none;
+            }
+    
+            @media (max-width: 992px) {
+                
+                .checkbtn {
+                    display: block;
+                    margin-top: 5px;
+                }
+                ul {
+                    position: fixed;
+                    max-width: 270px;
+                    min-width: 270px;
+                    height: 100vh;
+                    background: #003c4d;
+                    top: 0px;
+                    left: -100%;
+                    text-align: center;
+                    transition: all 1s;
+                    z-index: 100000;
+                    border-radius: 0 20px 20px 0;
+                }
+                .navbar ul li {
+                    display: block;
+                    margin: 50px 0;
+                    line-height: 30px;
+                }
+                .navbar ul li a {
+                    font-size: 20px;
+                }
+                #check:checked ~ ul {
+                    left: 0;
+                }   
+            }
+        
+
+            .header-top-images img {
+                @media (max-width: 1200px) {
+                    display: none;
                 }
             }    
         }
@@ -27,6 +102,14 @@
     }    
     h1 {
         @include font($fontweigth: 700, $fontsize: 56px, $lineheigth: 120%, $color: #fff, $opacity: none, $textdecoration: none); 
+
+        @media (max-width: 900px) {
+            @include font($fontweigth: 700, $fontsize: 46px, $lineheigth: 120%, $color: #fff, $opacity: none, $textdecoration: none); 
+        }
+
+        @media (max-width: 470px) {
+            @include font($fontweigth: 700, $fontsize: 36px, $lineheigth: 120%, $color: #fff, $opacity: none, $textdecoration: none); 
+        }
     }
 }
 
@@ -42,14 +125,44 @@
     padding: 32px;   
     color: white;
 
+    @media (max-width: 1300px) {
+        @include heigthvswidth ($heigth: 280px, $width: 1000px);
+        left: calc(50% - 500px);
+
+    }
+
+    @media (max-width: 1060px) {
+        @include heigthvswidth ($heigth: 200px, $width: 700px);
+        left: calc(50% - 350px);
+
+    }
+    @media (max-width: 750px) {
+        @include heigthvswidth ($heigth: 200px, $width: 300px);
+        left: calc(50% - 150px);
+
+    }
+
     h2 {
         @include font($fontweigth: 700, $fontsize: 46px, $lineheigth: 120%, $color: none, $opacity: none, $textdecoration: none);  
         margin-bottom: 4px;
+
+        @media (max-width: 1060px) {
+            margin-bottom: 20px;
+            @include font($fontweigth: 700, $fontsize: 30px, $lineheigth: 120%, $color: none, $opacity: none, $textdecoration: none);  
+        }
     }
 
     p {
         @include font($fontweigth: 600, $fontsize: 24px, $lineheigth: 149%, $color: none, $opacity: none, $textdecoration: none);  
         margin-bottom: 16px;
+
+        @media (max-width: 1060px) {
+            @include font($fontweigth: 600, $fontsize: 20px, $lineheigth: 120%, $color: none, $opacity: none, $textdecoration: none);  
+        }
+
+        @media (max-width: 1060px) {
+            display: none;
+        }
     }
 
     button {
@@ -62,8 +175,13 @@
     }    
 }
 .bottom-box {
-    @include heigthvswidth ($heigth: 10%, $width: 100%);
-    padding: 0px 88px 88px 88px;
+    margin: 0px auto;
+    padding: 0 88px 88px 88px;
+    @include heigthvswidth ($heigth: 100%, $width: 100%);
+
+    @media (max-width: 1050px) {
+        padding: 22px;
+    }
 
         .line {
             @include heigthvswidth ($heigth: 5px, $width: 80px);
@@ -78,43 +196,78 @@
         }
 
        .gitaralar {
-            display: flex;
-            justify-content: space-between;
-          
-           .gitara {
-                width: 400.67px;
-            
-                .texts {
-                    @include heigthvswidth ($heigth: 139px, $width: 100%);
-                    padding: 16px 24px 26px 24px;
+            @include display ($displayflex: flex, $alignitem: center, $justifycontent: center, $flexdirection: none, $gap: 30px);
 
-                    div {
-                        display: flex;
-                        justify-content: space-between;
+            @media (max-width: 1300px) {
+                margin: 0 auto;
+                @include grid ($display: grid, $split: 2, $num: 400px, $row: 417px, $grid-gap: 30px);
+            } 
 
-                        h3 {
-                            font-size: 18px;            
-                            margin-bottom: 8px;
-                        }
-                    }
+            @media (max-width: 900px) {
+                margin: 0 auto;
+                @include grid ($display: grid, $split: 1, $num: 400px, $row: 417px, $grid-gap: 30px);
+            }
+             
+                .gitara:last-child {
+                    display: none;
 
-                    p {
-                        font-size: 16px;
-                        margin-bottom: 38px;
-                        color: #767676;
-                    }
-
-                    span {
-                        font-size: 12px;
-                        color: #505050;
-
-                        &::before {
-                            content: '0';
-                            color: black;
-                            font-weight: bold;
-                        }
+                    @media (max-width: 1300px) {
+                        display: block;
                     }
                 }
-            }
+             
+                .gitara {
+                    margin: 70px auto;
+                    @include heigthvswidth ($heigth: 417px, $width: 400px);
+                    @media (max-width: 700px) {
+                        margin: 50px auto;
+                        @include heigthvswidth ($heigth: 317px, $width: 300px);
+
+                    }
+
+                    .texts {
+                        @include heigthvswidth ($heigth: 139px, $width: 100%);
+                        padding: 16px 24px 26px 24px;
+
+                        div {
+                            display: flex;
+                            justify-content: space-between;
+
+                            h3 {
+                                font-size: 18px;            
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        p {
+                            font-size: 16px;
+                            margin-bottom: 38px;
+                            color: #767676;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            color: #505050;
+
+                            &::before {
+                                content: '0';
+                                color: black;
+                                font-weight: bold;
+                            }
+                        }
+                    }            
+
+                }
+                .gitara img {
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover; 
+                    
+                    @include heigthvswidth ($heigth: 417px, $width: 400px);
+                    @media (max-width: 700px) {
+                        @include heigthvswidth ($heigth: 317px, $width: 300px);
+
+                    }                    
+                }
         }
     }

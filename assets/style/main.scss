@@ -27,6 +27,13 @@
     gap: $gap;
 }
 
+@mixin grid ($display, $split, $num, $row, $grid-gap) {
+    display: grid;
+    grid-template-columns: repeat($split, $num);
+    grid-template-rows: $row;
+    gap: $grid-gap;
+}
+
  @import "../section/first-section";
  @import "../section/second-section";
  @import "../section/third-section";
